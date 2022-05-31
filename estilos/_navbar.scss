@@ -1,0 +1,22 @@
+.navbar {
+    padding: 0 20px;
+    text-align: right;
+    justify-content: right;
+}
+
+.navbar-nav {
+    gap: 70px;
+    justify-content: center;
+    width: 100%;
+    letter-spacing: 3px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+#linkActive {
+    color: aqua;
+}

@@ -1,0 +1,637 @@
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*INICIO*/
+header {
+    font-family: "Poppins", sans-serif;
+    background-color: #121212;
+
+    h2 {
+        color: white;
+        text-align: center;
+        letter-spacing: 2px;
+        padding: 40px;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+}
+
+@mixin parallax ($alto, $bg-a, $bg-p, $bg-r) {
+    height: $alto;
+    background-attachment: $bg-a;
+    background-position: $bg-p;
+    background-repeat: $bg-r;
+}
+
+.parallax {
+    background-image: url("../img/icono3.png");
+    @include parallax(100vh, fixed, center, no-repeat);
+    background-size: cover;
+}
+
+/* Nav */
+@import "_navbar";
+
+/* Main */
+main {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to bottom, #c4e0e5, #4ca1af);
+
+    h2 {
+        text-align: center;
+        padding: 25px;
+        font-size: 35px;
+        margin: 0;
+    }
+
+    section article div h3 {
+        text-align: center;
+        padding: 30px;
+        font-size: 32px;
+        margin: 0;
+    }
+}
+
+.fontH3 {
+    text-align: center;
+}
+
+/* Carousel */
+.carousel {
+    text-align: center;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 10%;
+}
+
+/* Envío y pagos */
+.containerInicio{
+    text-align: center;
+    padding: 60px 0;
+}
+
+.fa-truck, .fa-credit-card, .fa-circle-check, .fa-face-laugh-beam{
+    font-size: 60px;
+    padding: 20px;
+}
+
+.h4--inicio{
+    margin: 0;
+    font-size: 22px;
+}
+
+.rowInicio{
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    font-family: "Poppins", sans-serif;
+    background-color: #4da0ae;
+
+    div h4 {
+        padding-bottom: 15px;
+        letter-spacing: 1px;
+        font-size: 20px;
+        font-weight: 900;
+        color: white;
+        margin: 0;
+    }
+
+    div h3 {
+        letter-spacing: 2px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    .footer1 {
+        background-color: #121212;
+        padding: 12px 0;
+    }
+
+    .footer2 {
+        background-color: black;
+    }
+}
+
+/* Formulario */
+.formConteiner {
+    box-shadow: 3px -2px 20px 4px rgba(66, 58, 58, 0.75);
+    border-radius: 8px;
+    padding: 20px 0px;
+    margin: 50px auto;
+    background-color: bisque;
+    width: 360px;
+    line-height: 26px;
+}
+
+.formConteiner__title {
+    font-size: 25px;
+    margin: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form {
+    text-align: center;
+}
+
+.form__label {
+    display: inline-block;
+    width: 95%;
+    font-weight: 600;
+}
+
+.form__input {
+    width: 75%;
+    padding: 8px;
+    background-color: bisque;
+    border-radius: 5px;
+    border: solid 1px #121212;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.form__textarea {
+    @extend .form__input;
+    height: 100px;
+    resize: none;
+}
+
+.form__input,
+.form__textarea:focus {
+    outline: none;
+}
+
+.form__input--submit {
+    background-color: white;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form__input--submit:hover {
+    background-color: peachpuff;
+}
+
+.form__label--checkbox {
+    margin-top: 12px;
+}
+
+.footerInline2 a {
+    text-decoration: none;
+}
+
+label {
+    display: inline;
+    margin-bottom: 0;
+}
+
+.col-md-6 {
+    text-align: center;
+}
+
+/* Iframe */
+.footerInline {
+    display: inline-block;
+}
+
+.iframeResponsive {
+    box-shadow: 3px -2px 20px 4px rgba(66, 58, 58, 0.75);
+}
+
+.iframe {
+    margin: 50px 0;
+}
+
+/* Redes */
+// Maps
+$redesHover:(facebook: #4267B2,
+    instagram: #C13584,
+    twitter: #1DA1F2,
+    whatsapp: #25D366,
+    envelope: #dd4b39,
+);
+
+@each $brands,
+$color in $redesHover {
+    .fa-#{$brands}:hover {
+        color: $color;
+    }
+}
+
+@each $envelope,
+$color in $redesHover {
+    .fa-#{$envelope}:hover {
+        color: $color;
+    }
+}
+
+.footerInline2 {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+
+$estilos:(blanco: white,
+    fontSize: 30px,
+    mLeft: 10px,
+    mRight: 10px);
+
+.fa-whatsapp,
+.fa-twitter,
+.fa-instagram,
+.fa-facebook,
+.fa-envelope {
+    color: map-get($estilos, blanco);
+    font-size: map-get($estilos, fontSize);
+    margin-left: map-get($estilos, mLeft);
+    margin-right: map-get($estilos, mRight);
+}
+
+@mixin sizes ($ancho, $alto, $bottom, $right) {
+    width: $ancho;
+    height: $alto;
+    bottom: $bottom;
+    right: $right;
+}
+
+/*Botón subir*/
+.fa-angle-up {
+    @include sizes(40px, 40px, 20px, 20px);
+    background-color: #121212;
+    color: white;
+    border: 3px solid azure;
+    position: fixed;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px #f8f9faa9;
+}
+
+/* PRODUCTOS */
+/* Botón Modelo */
+.dropdown {
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.btn {
+    background-color: lightskyblue;
+    border: 1px solid #12121277;
+}
+
+.dropdown-item {
+    width: 70%;
+}
+
+/* Imágenes */
+.container__produc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    text-align: center;
+    align-items: center;
+}
+
+/* SERVICIOS */
+.servicios {
+    padding: 20px 0 35px;
+}
+
+.rowServicios {
+    padding: 20px 0;
+}
+
+.containerServicios {
+    text-align: center;
+    align-self: center;
+}
+
+.servicios__h3 {
+    margin: 0;
+    padding: 25px 0px 20px;
+    font-size: 32px;
+}
+
+.servicios__p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 35px;
+    padding-bottom: 20px;
+}
+
+.imgServicios {
+    width: 360px;
+}
+
+/* CONTACTO */
+.contacto__h3 {
+    font-family: "Montserrat", sans-serif;
+    display: inline-grid;
+    padding: 60px;
+    width: 100%;
+    gap: 40px;
+    text-align: center;
+}
+
+.contacto__h3--a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+}
+
+.css-button-sharp--black {
+    min-width: 130px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 2px solid #212529;
+    background: #212529;
+    width: 220px;
+    justify-self: center;
+    border-radius: 8px;
+}
+
+.css-button-sharp--black:hover {
+    background: none;
+    color: #212529;
+    text-decoration: none;
+}
+
+/* SOBRE NOSOTROS */
+.nosotros {
+    padding: 20px;
+}
+
+.illustration {
+    width: 100%;
+    height: 370px;
+}
+
+.containerNos {
+    padding: 0;
+    text-align: center;
+}
+
+.nos__p {
+    margin-bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    line-height: 35px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 949px) {
+    .navbar-nav {
+        gap: 15px;
+        letter-spacing: 2px;
+    }
+
+    .parallax {
+        background-size: 1200px;
+    }
+
+    .carousel-indicators {
+        margin: 3px;
+    }
+
+    .carousel-indicators li {
+        width: 15px;
+    }
+
+    .carousel-caption {
+        padding-bottom: 3px;
+    }
+
+    .h3,
+    h3 {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .imgCarousel {
+        height: 350px;
+    }
+
+    .formConteiner {
+        width: 310px;
+    }
+
+    .iframe {
+        margin: 50px 0;
+    }
+
+    .iframeResponsive {
+        width: 310px;
+        height: 500px;
+    }
+
+    footer p {
+        font-weight: 100;
+    }
+
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    header h2 {
+        font-size: 27px;
+        padding-bottom: 30px;
+    }
+
+    .parallax {
+        height: 360px;
+        background-position-y: 25px;
+        background-size: 750px;
+    }
+
+    .navbar-nav {
+        gap: 0;
+        background: #121212e0;
+        width: 100%;
+        padding: 10px 35px;
+    }
+
+    .carousel-indicators {
+        margin: 3px;
+    }
+
+    .carousel-indicators li {
+        width: 15px;
+    }
+
+    .carousel-caption {
+        padding-bottom: 3px;
+    }
+
+    .h3,
+    h3 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .imgCarousel {
+        height: 250px;
+    }
+
+    .formConteiner {
+        width: 350px;
+    }
+
+    .formConteiner__title {
+        margin: 10px 0px 0px 0px;
+    }
+
+    .footerInline {
+        display: block;
+    }
+
+    .iframeResponsive {
+        width: 370px;
+        height: 400px;
+        margin-bottom: 30px;
+    }
+
+    .iframe {
+        margin: 10px auto 10px auto;
+        text-align: center;
+    }
+
+    footer p {
+        font-weight: 100;
+    }
+
+    .fa-angle-up {
+        @include sizes(35px, 35px, 65px, 35px);
+    }
+
+    .illustration {
+        height: 100%;
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header h2 {
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+
+    .parallax {
+        height: 320px;
+        background-position-y: 70px;
+        background-size: 540px;
+    }
+
+    .navbar-nav {
+        gap: 0;
+        background: #121212e0;
+        width: 100%;
+        padding: 10px 35px;
+    }
+
+    main h2 {
+        font-size: 25px;
+        padding: 25px;
+    }
+
+    .illustration {
+        height: 200px;
+    }
+
+    .carousel-indicators {
+        margin: 3px;
+    }
+
+    .carousel-indicators li {
+        width: 15px;
+    }
+
+    .carousel-caption {
+        padding-bottom: 3px;
+    }
+
+    .h3,
+    h3 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .imgCarousel {
+        height: 200px;
+    }
+
+    .imgServicios {
+        width: 300px;
+    }
+
+    .formConteiner {
+        width: 300px;
+        padding: 20px 0px;
+    }
+
+    .formConteiner__title {
+        font-size: 22px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .footerInline {
+        display: block;
+    }
+
+    .iframeResponsive {
+        width: 320px;
+        height: 320px;
+    }
+
+    .iframe {
+        margin: 0px auto 30px auto;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 15px;
+        font-weight: 100;
+    }
+
+    .fa-angle-up {
+        @include sizes(35px, 35px, 10px, 10px);
+    }
+}
